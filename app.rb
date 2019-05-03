@@ -20,3 +20,9 @@ get '/premises' do
   premises = Premise.all
   { :entries => premises }.to_json
 end
+
+post '/v1/stations' do
+  new_station = JSON.parse(request.body.read)
+  station = Station.create(new_station)
+  { :entries => station }.to_json
+end

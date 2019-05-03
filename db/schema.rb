@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 2019_05_03_132315) do
     t.string "address"
   end
 
-  create_table "stations", force: :cascade do |t|
-    t.string "serial"
+  create_table "stations", primary_key: "serial", force: :cascade do |t|
     t.string "name"
     t.integer "premise_id"
     t.index ["premise_id"], name: "index_stations_on_premise_id"
